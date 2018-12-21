@@ -12,7 +12,7 @@ class GameSquare extends Component {
     
     return (
       <Col style={styles}>
-        
+        {this.props.spot}
       </Col>
     )
   }

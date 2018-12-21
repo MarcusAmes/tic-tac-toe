@@ -11,23 +11,23 @@ class GameBoard extends Component {
       height: '92vh',
       backgroundColor: 'green',
     }
-    
+    const board = this.props.board
     return (
       <div style={styles}>
         <Row style={{height: '33.3%'}}>
-          <GameSquare />
-          <GameSquare />
-          <GameSquare />
+          <GameSquare spot={board.tl}/>
+          <GameSquare spot={board.tm}/>
+          <GameSquare spot={board.tr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
-          <GameSquare />
-          <GameSquare />
-          <GameSquare />
+          <GameSquare spot={board.ml}/>
+          <GameSquare spot={board.mm}/>
+          <GameSquare spot={board.mr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
-          <GameSquare />
-          <GameSquare />
-          <GameSquare />
+          <GameSquare spot={board.bl}/>
+          <GameSquare spot={board.bm}/>
+          <GameSquare spot={board.br}/>
         </Row>
       </div>
     )

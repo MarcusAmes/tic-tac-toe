@@ -1,5 +1,13 @@
 const initState ={
-
+  tl: "",
+  tm: "",
+  tr: "",
+  ml: "",
+  mm: "",
+  mr: "",
+  bl: "",
+  bm: "",
+  br: "",
 }
 
 const boardReducer = (state = initState, action) => {
