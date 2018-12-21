@@ -6,7 +6,7 @@ class TopNav extends Component {
     
     return (
       <Navbar color="warning">
-        <NavbarBrand>  </NavbarBrand>
+        <NavbarBrand> tic-tac-toe </NavbarBrand>
       </Navbar>
     )
   }

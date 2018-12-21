@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
-import GameSquare from './GameSquare'
 import {Row} from 'reactstrap'
+import GameSquareContainer from '../containers/GameSquareContainer';
 
 
 class GameBoard extends Component {
@@ -9,7 +8,7 @@ class GameBoard extends Component {
   render() {
     
     const styles = {
-      height: '92vh',
+      height: '85vh',
       backgroundColor: 'green',
     }
     const board = this.props.board
@@ -19,19 +18,19 @@ class GameBoard extends Component {
     return (
       <div style={styles}>
         <Row style={{height: '33.3%'}}>
-          <GameSquare id="tl" spot={board[0].tl}/>
-          <GameSquare id="tm" spot={board[0].tm}/>
-          <GameSquare id="tr" spot={board[0].tr}/>
+          <GameSquareContainer letter={this.props.letter} id="tl" spot={board[0].tl}/>
+          <GameSquareContainer letter={this.props.letter} id="tm" spot={board[0].tm}/>
+          <GameSquareContainer letter={this.props.letter} id="tr" spot={board[0].tr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
-          <GameSquare id="ml" spot={board[0].ml}/>
-          <GameSquare id="mm" spot={board[0].mm}/>
-          <GameSquare id="mr" spot={board[0].mr}/>
+          <GameSquareContainer letter={this.props.letter} id="ml" spot={board[0].ml}/>
+          <GameSquareContainer letter={this.props.letter} id="mm" spot={board[0].mm}/>
+          <GameSquareContainer letter={this.props.letter} id="mr" spot={board[0].mr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
-          <GameSquare id="bl" spot={board[0].bl}/>
-          <GameSquare id="bm" spot={board[0].bm}/>
-          <GameSquare id="br" spot={board[0].br}/>
+          <GameSquareContainer letter={this.props.letter} id="bl" spot={board[0].bl}/>
+          <GameSquareContainer letter={this.props.letter} id="bm" spot={board[0].bm}/>
+          <GameSquareContainer letter={this.props.letter} id="br" spot={board[0].br}/>
         </Row>
       </div>
     )

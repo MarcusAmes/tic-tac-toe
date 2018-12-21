@@ -5,7 +5,9 @@ class GameSquare extends Component {
 
   _onClick = () => {
     console.log(this.props.id);
-    
+    if (this.props.letter && this.props.letter.length) {
+      this.props.editBoard(this.props.id, this.props.letter)
+    }
   }
 
   render() {
