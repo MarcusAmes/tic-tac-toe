@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TopNav from './components/TopNav';
-import GameBoard from './components/GameBoard';
+import GameBoardContainer from './containers/GameBoardContainer';
 import {Container} from 'reactstrap'
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
       <div style={styles} className="App">
         <TopNav />
         <Container>
-          <GameBoard />
+          <GameBoardContainer />
         </Container>
       </div>
     );

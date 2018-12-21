@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import GameSquare from './GameSquare'
 
-import {Container, Row} from 'reactstrap'
+import GameSquare from './GameSquare'
+import {Row} from 'reactstrap'
+
 
 class GameBoard extends Component {
-
-
 
   render() {
     const styles = {
@@ -15,17 +14,17 @@ class GameBoard extends Component {
     
     return (
       <div style={styles}>
-        <Row style={{height: '33%'}}>
+        <Row style={{height: '33.3%'}}>
           <GameSquare />
           <GameSquare />
           <GameSquare />
         </Row>
-        <Row style={{height: '33%'}}>
+        <Row style={{height: '33.3%'}}>
           <GameSquare />
           <GameSquare />
           <GameSquare />
         </Row>
-        <Row style={{height: '33%'}}>
+        <Row style={{height: '33.3%'}}>
           <GameSquare />
           <GameSquare />
           <GameSquare />
