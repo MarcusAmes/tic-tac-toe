@@ -2,6 +2,10 @@
 
 # firebase
 config/
+.firebaserc
+firebase.json
+firestore.rules
+.firebase
 
 # dependencies
 /node_modules

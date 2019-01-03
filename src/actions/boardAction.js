@@ -1,3 +1,4 @@
+import { getFirestore } from "redux-firestore";
 
 
 //ACTIONS
@@ -10,14 +11,15 @@ const changeLetter = (letter) => ({ type: CHANGE_LETTER, letter: letter })
 //THUNKS
 
 export const editBoard = (id, letter) => {
-  return (dispatch, getState, {getFirebase, getFirestore}) => {
-    const firestore = getFirestore()
+  return (dispatch, getState) => {
     const state = getState()
+    console.log(state.firestore);
     
-    firestore.collection('board').doc(state.firestore.ordered.board[0].id).set({
-      ...state.firestore.ordered.board[0],
-      [id]: letter
-    })
+    
+    // state.firestore.collection('board').doc(state.firestore.ordered.board[0].id).set({
+    //   ...state.firestore.ordered.board[0],
+    //   [id]: letter
+    // })
     
   }
 }

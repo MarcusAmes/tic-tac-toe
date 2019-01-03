@@ -3,8 +3,8 @@ import TopNav from './components/TopNav';
 import GameBoardContainer from './containers/GameBoardContainer';
 import {Container} from 'reactstrap'
 import LetterFormContainer from './containers/LetterFormContainer';
-class App extends Component {
 
+class App extends Component {
   render() {
     const styles = {
       height: '100vh',
@@ -15,7 +15,7 @@ class App extends Component {
         <TopNav />
         <Container>
           <GameBoardContainer />
-        <LetterFormContainer />
+          <LetterFormContainer />
         </Container>
       </div>
     );

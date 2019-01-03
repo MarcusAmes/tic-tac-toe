@@ -5,8 +5,8 @@ import GameSquareContainer from '../containers/GameSquareContainer';
 
 class GameBoard extends Component {
 
-  render() {
-    
+  
+  render() {    
     const styles = {
       height: '85vh',
       backgroundColor: 'green',
