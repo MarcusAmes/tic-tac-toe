@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    board: state.firestore.ordered.board
+    board: state.firestore.ordered.board,
+    players: state.firestore.ordered.players
   }
 }
 
@@ -25,6 +26,10 @@ const mapStateToProps = state => {
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{
-    collection: 'board'
-  }])
+      collection: 'board'
+    },
+    {
+      collection: 'players'
+    }
+  ])
 )(LetterForm)
