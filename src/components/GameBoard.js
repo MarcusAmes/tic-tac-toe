@@ -15,6 +15,30 @@ class GameBoard extends Component {
     if(!board) {
       return (<div>Loading...</div>)
     }
+    let winCheck = {}
+    for (let key in board[0]) {
+      if (winCheck[key.substring(0, 1)]) {
+        if (winCheck[key.substring(0, 1)].letter === board[0][key] && board[0][key].length) {
+          winCheck[key.substring(0,1)] = {...winCheck[key.substring(0,1)], num: winCheck[key.substring(0,1)].num += 1}
+        }
+      } else {
+        winCheck[key.substring(0, 1)] = { letter: board[0][key], num: 1 }
+      }
+      if (winCheck[key.substring(1, 2)]) {
+        if (winCheck[key.substring(1, 2)].letter === board[0][key] && board[0][key].length) {
+          winCheck[key.substring(0,1)] = {...winCheck[key.substring(1,2)], num: winCheck[key.substring(1,2)].num += 1}
+        }
+      } else {
+        winCheck[key.substring(1, 2)] = { letter: board[0][key], num: 1 }
+      }
+    }
+    for(let key in winCheck) {
+      if(winCheck[key].num === 3){
+        return <div>{winCheck[key].letter} Wins!</div>
+      }
+    }
+    
+    
     return (
       <div style={styles}>
         <Row style={{height: '33.3%'}}>
@@ -23,9 +47,9 @@ class GameBoard extends Component {
           <GameSquareContainer letter={this.props.letter} id="tr" spot={board[0].tr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
-          <GameSquareContainer letter={this.props.letter} id="ml" spot={board[0].ml}/>
-          <GameSquareContainer letter={this.props.letter} id="mm" spot={board[0].mm}/>
-          <GameSquareContainer letter={this.props.letter} id="mr" spot={board[0].mr}/>
+          <GameSquareContainer letter={this.props.letter} id="cl" spot={board[0].cl}/>
+          <GameSquareContainer letter={this.props.letter} id="cm" spot={board[0].cm}/>
+          <GameSquareContainer letter={this.props.letter} id="cr" spot={board[0].cr}/>
         </Row>
         <Row style={{height: '33.3%'}}>
           <GameSquareContainer letter={this.props.letter} id="bl" spot={board[0].bl}/>
