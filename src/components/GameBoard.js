@@ -18,19 +18,28 @@ class GameBoard extends Component {
     let winCheck = {}
     for (let key in board[0]) {
       if (winCheck[key.substring(0, 1)]) {
-        if (winCheck[key.substring(0, 1)].letter === board[0][key] && board[0][key].length) {
+        if (winCheck[key.substring(0, 1)].letter === board[0][key] && board[0][key].length) {         
           winCheck[key.substring(0,1)] = {...winCheck[key.substring(0,1)], num: winCheck[key.substring(0,1)].num += 1}
+          console.log(winCheck);
+          
         }
       } else {
-        winCheck[key.substring(0, 1)] = { letter: board[0][key], num: 1 }
+        if (board[0][key].length) {
+          winCheck[key.substring(0, 1)] = { letter: board[0][key], num: 1 }
+        }
       }
       if (winCheck[key.substring(1, 2)]) {
         if (winCheck[key.substring(1, 2)].letter === board[0][key] && board[0][key].length) {
-          winCheck[key.substring(0,1)] = {...winCheck[key.substring(1,2)], num: winCheck[key.substring(1,2)].num += 1}
+          winCheck[key.substring(1,2)] = {...winCheck[key.substring(1,2)], num: winCheck[key.substring(1,2)].num += 1}
         }
       } else {
-        winCheck[key.substring(1, 2)] = { letter: board[0][key], num: 1 }
+        if (board[0][key].length) {
+          winCheck[key.substring(1, 2)] = { letter: board[0][key], num: 1 }
+        }
       }
+    }
+    if (board[0].cm.length && ((board[0].tl === board[0].cm && board[0].cm === board[0].br) || (board[0].tr === board[0].cm && board[0].cm === board[0].bl))) {
+      return <div>{board[0].cm} Wins!</div>
     }
     for(let key in winCheck) {
       if(winCheck[key].num === 3){
